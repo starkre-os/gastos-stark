@@ -28,7 +28,7 @@ export function DataToolbar() {
         value={currency}
         onChange={(e) => setCurrency(e.target.value)}
         aria-label="Moneda"
-        className="rounded-xl border border-neutral-200 bg-white px-3 py-1.5 outline-none focus:border-neutral-900"
+        className="rounded-xl border border-neutral-800 bg-neutral-900 px-3 py-1.5 outline-none focus:border-neutral-500"
       >
         {CURRENCIES.map((c) => (
           <option key={c} value={c}>
@@ -39,14 +39,14 @@ export function DataToolbar() {
 
       <button
         onClick={exportJson}
-        className="rounded-xl border border-neutral-200 bg-white px-3 py-1.5 transition hover:border-neutral-900"
+        className="rounded-xl border border-neutral-800 bg-neutral-900 px-3 py-1.5 transition hover:border-neutral-500"
       >
         Exportar
       </button>
 
       <button
         onClick={() => fileInput.current?.click()}
-        className="rounded-xl border border-neutral-200 bg-white px-3 py-1.5 transition hover:border-neutral-900"
+        className="rounded-xl border border-neutral-800 bg-neutral-900 px-3 py-1.5 transition hover:border-neutral-500"
       >
         Importar
       </button>
@@ -69,12 +69,12 @@ export function DataToolbar() {
             setMessage('Datos borrados.')
           }
         }}
-        className="rounded-xl border border-neutral-200 bg-white px-3 py-1.5 text-red-600 transition hover:border-red-500"
+        className="rounded-xl border border-neutral-800 bg-neutral-900 px-3 py-1.5 text-red-400 transition hover:border-red-500"
       >
         Borrar todo
       </button>
 
-      {message && <span className="text-xs text-neutral-500">{message}</span>}
+      {message && <span className="text-xs text-neutral-400">{message}</span>}
     </div>
   )
 }

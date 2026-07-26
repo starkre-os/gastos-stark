@@ -27,28 +27,28 @@ export function ExpenseForm() {
   return (
     <form
       onSubmit={submit}
-      className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm"
+      className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5"
     >
       <div className="grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
         <label className="block">
-          <span className="mb-1 block text-xs font-medium text-neutral-500">Monto</span>
+          <span className="mb-1 block text-xs font-medium text-neutral-400">Monto</span>
           <input
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             inputMode="decimal"
             placeholder="0.00"
             aria-label="Monto"
-            className="w-full rounded-xl border border-neutral-200 px-3 py-2 text-lg outline-none focus:border-neutral-900"
+            className="w-full rounded-xl border border-neutral-800 bg-neutral-950 px-3 py-2 text-lg outline-none placeholder:text-neutral-600 focus:border-neutral-500"
           />
         </label>
 
         <label className="block">
-          <span className="mb-1 block text-xs font-medium text-neutral-500">Categoría</span>
+          <span className="mb-1 block text-xs font-medium text-neutral-400">Categoría</span>
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             aria-label="Categoría"
-            className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2.5 outline-none focus:border-neutral-900"
+            className="w-full rounded-xl border border-neutral-800 bg-neutral-950 px-3 py-2.5 outline-none focus:border-neutral-500"
           >
             {CATEGORIES.map((c) => (
               <option key={c} value={c}>
@@ -60,7 +60,7 @@ export function ExpenseForm() {
 
         <button
           type="submit"
-          className="h-11 rounded-xl bg-neutral-900 px-5 font-medium text-white transition hover:bg-neutral-700"
+          className="h-11 rounded-xl bg-neutral-100 px-5 font-medium text-neutral-900 transition hover:bg-white"
         >
           Agregar
         </button>
@@ -72,18 +72,18 @@ export function ExpenseForm() {
           onChange={(e) => setNote(e.target.value)}
           placeholder="Nota (opcional)"
           aria-label="Nota"
-          className="w-full rounded-xl border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-neutral-900"
+          className="w-full rounded-xl border border-neutral-800 bg-neutral-950 px-3 py-2 text-sm outline-none placeholder:text-neutral-600 focus:border-neutral-500"
         />
         <input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
           aria-label="Fecha"
-          className="rounded-xl border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-neutral-900"
+          className="rounded-xl border border-neutral-800 bg-neutral-950 px-3 py-2 text-sm outline-none focus:border-neutral-500"
         />
       </div>
 
-      {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
+      {error && <p className="mt-2 text-sm text-red-400">{error}</p>}
     </form>
   )
 }
