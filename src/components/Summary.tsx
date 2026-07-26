@@ -11,10 +11,10 @@ type Props = {
 
 export function Summary({ label, total, count, currency, byCategory }: Props) {
   return (
-    <section className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
-      <p className="text-xs font-medium tracking-wide text-neutral-500 uppercase">{label}</p>
+    <section className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5">
+      <p className="text-xs font-medium tracking-wide text-neutral-400 uppercase">{label}</p>
       <p className="mt-1 text-4xl font-semibold tabular-nums">{formatMoney(total, currency)}</p>
-      <p className="mt-1 text-sm text-neutral-500">
+      <p className="mt-1 text-sm text-neutral-400">
         {count} {count === 1 ? 'gasto' : 'gastos'} en el periodo
       </p>
 
@@ -23,10 +23,10 @@ export function Summary({ label, total, count, currency, byCategory }: Props) {
           {byCategory.map((item) => (
             <li key={item.category} className="text-sm">
               <div className="flex items-baseline justify-between">
-                <span className="text-neutral-600">{item.category}</span>
+                <span className="text-neutral-300">{item.category}</span>
                 <span className="tabular-nums">{formatMoney(item.total, currency)}</span>
               </div>
-              <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-neutral-100">
+              <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-neutral-800">
                 <div
                   className="h-full rounded-full"
                   style={{

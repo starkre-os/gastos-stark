@@ -41,7 +41,7 @@ export default function App() {
       <header className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Gastos</h1>
-          <p className="text-sm text-neutral-500">
+          <p className="text-sm text-neutral-400">
             Tus datos se guardan solo en este navegador.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function App() {
         <TrendChart data={view.chart} currency={currency} title={CHART_TITLES[period]} />
       </div>
 
-      <h2 className="mt-8 mb-3 text-sm font-medium text-neutral-500">Movimientos del periodo</h2>
+      <h2 className="mt-8 mb-3 text-sm font-medium text-neutral-400">Movimientos del periodo</h2>
       <ExpenseList expenses={view.expenses} currency={currency} onRemove={removeExpense} />
     </div>
   )
