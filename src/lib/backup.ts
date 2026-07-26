@@ -25,7 +25,12 @@ function isExpense(value: unknown): value is Expense {
 }
 
 export function parseBackup(text: string): BackupFile {
-  const data: unknown = JSON.parse(text)
+  let data: unknown
+  try {
+    data = JSON.parse(text)
+  } catch {
+    throw new Error('El archivo no tiene el formato esperado.')
+  }
   if (typeof data !== 'object' || data === null) {
     throw new Error('El archivo no tiene el formato esperado.')
   }
